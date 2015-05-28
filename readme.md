@@ -12,7 +12,9 @@ because it's a pretty basic task, and Ruby is on my list of languages to get
 more familiar with.  I quite enjoyed it, actually - I can see the appeal, the
 code felt very organized and expressive.
 
-Now, onto the fun part!
+If you want some examples of what happens when you run it on a jpeg, I tested
+it out with [a cute bunny][bunnyalbum], and it glitched it up quite nicely.  If
+you want to try it out with your own images, read on!
 
 Usage
 -----
@@ -91,3 +93,4 @@ to blame.
 [reddit]: http://www.reddit.com/r/NoStupidQuestions/comments/37gzsi/when_i_permanently_delete_a_file_on_my_computer/crmrwu0?context=3 "When I permanently delete a file on my computer, where does it go?"
 [amfbp]: http://www.reddit.com/user/askmeforbunnypics "AskMeForBunnyPics on Reddit"
 [feh]: http://feh.finalrewind.org/ "feh – a fast and light Imlib2-based image viewer"
+[bunnyalbum]: http://imgur.com/a/nxLAk "Bunny Glitching on Imgur"
