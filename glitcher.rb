@@ -3,7 +3,7 @@ require 'optparse'
 options = {
     :bytes => 20,
     :replace => nil,
-    :num => 1,
+    :num => 5,
     :start => 0,
     :end => 1,
 }
@@ -39,6 +39,10 @@ OptionParser.new do |opts|
         end
     end
 end.parse!
+
+if ARGV.length == 0
+    abort("No input file specified!")
+end
 
 infile = ARGV[0]
 if ARGV.length >= 2
