@@ -5,8 +5,8 @@ This is just a quick script created on a whim to play with some very basic
 glitch art.  It takes an input file and outputs a copy with random segments of
 the file replaced with random bytes or, optionally, a specified phrase.
 
-It was inspired by a delightful [Reddit discussion][1] about what happens to
-files when you delete them.  Thanks to [/u/askmeforbunnypics][2] for the
+It was inspired by a delightful [Reddit discussion][reddit] about what happens
+to files when you delete them.  Thanks to [/u/askmeforbunnypics][amfbp] for the
 interesting response, and inspiration.  I decided to write it up in Ruby
 because it's a pretty basic task, and Ruby is on my list of languages to get
 more familiar with.  I quite enjoyed it, actually - I can see the appeal, the
@@ -50,17 +50,24 @@ and match percentages and bytes at will.
 Some examples of the above options in action:
 
     # Place 123 instances of the string "testing" throughout the file
-    glitcher.rb -r testing -n 123 infile.jpg
+    ./glitcher.rb -r testing -n 123 infile.jpg
 
     # Replace one segment of 10 bytes somewhere in the first 100 bytes
-    glitcher.rb -n1 -b10 --range 100 infile.jpg
+    ./glitcher.rb -n1 -b10 --range 100 infile.jpg
     
     # Replace 10 segments of 50 bytes, leaving the first 5% of the file untouched
-    glitcher.rb -n10 -b50 --range 5%,100% infile.jpg
+    ./glitcher.rb -n10 -b50 --range 5%,100% infile.jpg
 
     # Place 10 instances of "another example" anywhere in the first 50% of the file,
     # but not in the first 100 bytes
-    glitcher.rb -n10 -r "another example" --range 100,50% infile.jpg
+    ./glitcher.rb -n10 -r "another example" --range 100,50% infile.jpg
+
+I suggest following up the generation with a call to a viewer to see the
+result.  If you're on \*nix, I recommend the very straightforward but capable
+[feh][feh], but anything that takes a command line argument will do the trick.
+An example if you're on \*nix, adjust as necessary:
+
+    ./glitcher.rb infile.jpg && feh outfile
 
 Details
 -------
@@ -81,5 +88,6 @@ same, use this at your own risk - if you run it on a giant file when your hard
 disk space is low and somehow end up hosing something, you have only yourself
 to blame. 
 
-[1]: http://www.reddit.com/r/NoStupidQuestions/comments/37gzsi/when_i_permanently_delete_a_file_on_my_computer/crmrwu0?context=3 "When I permanently delete a file on my computer, where does it go?"
-[2]: http://www.reddit.com/user/askmeforbunnypics "AskMeForBunnyPics on Reddit"
+[reddit]: http://www.reddit.com/r/NoStupidQuestions/comments/37gzsi/when_i_permanently_delete_a_file_on_my_computer/crmrwu0?context=3 "When I permanently delete a file on my computer, where does it go?"
+[amfbp]: http://www.reddit.com/user/askmeforbunnypics "AskMeForBunnyPics on Reddit"
+[feh]: http://feh.finalrewind.org/ "feh – a fast and light Imlib2-based image viewer"
