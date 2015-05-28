@@ -56,13 +56,14 @@ total_bytes = File.size(infile)
     if options[elm] <= 1
         options[elm] *= total_bytes
     end
+    options[elm] = options[elm].to_i
 end
 
 fin = File.open(infile)
 fout = File.open(outfile,"wb")
 offsets = []
 options[:num].times do
-    offsets << (rand(options[:end]+options[:start]) - options[:start])
+    offsets << (rand(options[:end]-options[:start]) + options[:start]).to_i
 end
 
 prev_end = 0
