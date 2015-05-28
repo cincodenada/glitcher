@@ -40,4 +40,42 @@ OptionParser.new do |opts|
     end
 end.parse!
 
-p options
+infile = ARGV[0]
+if ARGV.length >= 2
+    outfile = ARGV[1]
+else
+    outfile = "outfile"
+end
+
+total_bytes = File.size(infile)
+[:start,:end].each do |elm|
+    if options[elm] <= 1
+        options[elm] *= total_bytes
+    end
+end
+
+fin = File.open(infile)
+fout = File.open(outfile,"wb")
+offsets = []
+options[:num].times do
+    offsets << (rand(options[:end]+options[:start]) - options[:start])
+end
+
+prev_end = 0
+offsets.sort!.each do |offset|
+    IO.copy_stream(fin, fout, offset-prev_end, prev_end)
+    if options[:replace].nil?
+        replacement = ''
+        options[:bytes].times do
+            replacement += rand(255).chr
+        end
+    else
+        replacement = options[:replace]
+    end
+    fout.write(replacement)
+    prev_end = offset + options[:bytes]
+end
+
+if prev_end < total_bytes
+    IO.copy_stream(fin, fout, total_bytes - prev_end, prev_end)
+end
