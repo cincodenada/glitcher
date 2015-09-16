@@ -12,9 +12,22 @@ because it's a pretty basic task, and Ruby is on my list of languages to get
 more familiar with.  I quite enjoyed it, actually - I can see the appeal, the
 code felt very organized and expressive.
 
+Examples
+----
 If you want some examples of what happens when you run it on a jpeg, I tested
-it out with [a cute bunny][bunnyalbum], and it glitched it up quite nicely.  If
-you want to try it out with your own images, read on!
+it out with a cute bunny, and it glitched it up quite nicely.  Here are a few
+of the results:
+
+**Original:**  
+![Original](http://i.imgur.com/TXmNMW0.jpg)  
+**Results:**  
+![Example 1](http://i.imgur.com/oyKBNRz.jpg)
+![Example 2](http://i.imgur.com/XL1s8z9.jpg)
+![Example 4](http://i.imgur.com/gwKyyH9.jpg)
+![Example 3](http://i.imgur.com/33ddxZf.jpg)
+
+There are more [in an Imgur album][bunnyalbum].
+If you want to try it out with your own images, read on!
 
 Usage
 -----
